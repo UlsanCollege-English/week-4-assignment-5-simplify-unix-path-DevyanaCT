@@ -27,9 +27,7 @@ def simplify_path(path: str) -> str:
         elif part == "..":
             if stack:  # go up one directory
                 stack.pop()
-            # else: at root, do nothing
         else:
             stack.append(part)  # add valid directory
 
-    # Join stack with '/' and ensure leading '/'
     return "/" + "/".join(stack)
